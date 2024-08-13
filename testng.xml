@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ParallelSuite" parallel="tests" thread-count="3">
+
+    <!-- deviceName and platformVersion are using Regex to help increase selection from device pool - https://docs.saucelabs.com/mobile-apps/supported-devices/#dynamic-device-allocation  -->
+    <test name="Real Device 1">
+        <parameter name="deviceName" value="Google Pixel.*"/>
+        <parameter name="platformVersion" value="^1[0-4].*"/>
+        <classes>
+            <class name="com.realdevices.TestRunner"/>
+        </classes>
+    </test>
+    <test name="Real Device 2">
+        <parameter name="deviceName" value="Samsung Galaxy.*"/>
+        <parameter name="platformVersion" value="^1[0-4].*"/>
+
+        <classes>
+            <class name="com.realdevices.TestRunner"/>
+        </classes>
+    </test>
+    <test name="Real Device 3">
+        <parameter name="deviceName" value="Google Pixel.*"/>
+        <parameter name="platformVersion" value="^1[0-4].*"/>
+        <classes>
+            <class name="com.realdevices.TestRunner"/>
+        </classes>
+    </test>
+</suite>
